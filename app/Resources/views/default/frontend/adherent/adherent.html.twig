@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block titlecontent %}Formulaire d'ajout adherent{% endblock %}
+
+{% block titlepage %}
+    <li><a href="{{ path('homepage') }}"><i class="fa fa-dashboard"></i> Accueil</a></li>
+    <li><a href="{{ path('add_adherent') }}" class="active">adherent</a></li>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form_row(form.nom, {'attr': {'class': 'form-control', 'placeholder': "Saisir nom adherent"}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.dateNaissance, {'attr': {'class': 'form-control', 'placeholder': "Saisir la date de naissance"}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.prenom, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.ville, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.sexe, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.telephone, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.codePostal, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.adresse, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.quartier, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.situation, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.certificat, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.telephoneFixe, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.commentaire, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.telephoneFixe, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_row(form.numeroSecu, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form_row(form.submit) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}

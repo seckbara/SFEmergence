@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="sfemergence@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="sfemergence">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="adherents"/>
+    <schema id="4" parent="1" name="emergence"/>
+    <schema id="5" parent="1" name="enrcert"/>
+    <schema id="6" parent="1" name="enrcertpro"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="operations_revisees"/>
+    <schema id="10" parent="1" name="pass_renov"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="phpmyadmin"/>
+    <schema id="13" parent="1" name="qmac"/>
+    <schema id="14" parent="1" name="qmac-mb"/>
+    <schema id="15" parent="1" name="qmac2"/>
+    <schema id="16" parent="1" name="qmac_pee"/>
+    <schema id="17" parent="1" name="refonte-qmac"/>
+    <schema id="18" parent="1" name="refonte_pee"/>
+    <schema id="19" parent="1" name="solirenov"/>
+    <schema id="20" parent="1" name="sys"/>
+    <schema id="21" parent="1" name="test"/>
+  </database-model>
+</dataSource>
