@@ -16,14 +16,12 @@ class AdherentController extends Controller
      */
     public function indexAction()
     {
-        //return $this->render('default/frontend/adherent/adherent.html.twig');
         $adherent = new Adherent();
         $form = $this->createForm(AdherentType::class, $adherent);
         $form->add('submit', SubmitType::class, [
             'label' => 'Ajouter',
             'attr' => ['class' => 'btn-block btn-success btn-sm pull-right'],
         ]);
-
 
         return $this->render('default/frontend/adherent/adherent.html.twig', array(
             'form' => $form->createView(),
