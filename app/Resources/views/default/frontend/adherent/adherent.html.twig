@@ -4,11 +4,11 @@
 
 {% block titlepage %}
     <li><a href="{{ path('homepage') }}"><i class="fa fa-dashboard"></i> Accueil</a></li>
-    <li><a href="{{ path('add_adherent') }}" class="active">adherent</a></li>
+    <li><a href="{{ path('adherent') }}" class="active">adherent</a></li>
 {% endblock %}
 
 {% block body %}
-
+<form action="{{ path('create_adherent') }}" method="post">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -106,13 +106,25 @@
     </div>
 
     <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_row(form.cheminsCertificat, {'attr': {'class': 'form-control', 'placeholder': "Saisir le chemin"}}) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 {{ form_row(form.submit) }}
             </div>
         </div>
     </div>
-
+</form>
 {% endblock %}
 
 {% block stylesheets %}{% endblock %}
