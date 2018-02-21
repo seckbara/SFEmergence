@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block titlecontent %}Ajout abonnement de <b>{{ adherent.nom }}  {{ adherent.prenom }}</b>{% endblock %}
+
+{% block titlepage %}
+    <li><a href="{{ path('homepage') }}"><i class="fa fa-dashboard"></i> Accueil</a></li>
+    <li><a href="{{ path('create_adherent') }}" class="active">abonnement</a></li>
+{% endblock %}
+
+{% block body %}
+    <form action="{{ path('create_abonnement') }}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form_row(form.certificat, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.activite, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="form-group">
+                        {{ form_row(form.dateCertficat, {'attr': {'class': 'form-control', 'placeholder': "Saisir prenom adherent"}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.typeAbonnement, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="form-group">
+                        {{ form_row(form.dateAbonnement, {'attr': {'class': 'form-control', 'placeholder': "Saisir le sexe"}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.duree, {'attr': {'class': 'form-control', 'placeholder': "Saisir le numéro de téléphone"}}) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="form-group">
+                        {{ form_row(form.typePaiement, {'attr': {'class': 'form-control', 'placeholder': "Saisir le code postal"}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.montant, {'attr': {'class': 'form-control', 'placeholder': "Saisir l'adresse"}}) }}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form_row(form.submit) }}
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}

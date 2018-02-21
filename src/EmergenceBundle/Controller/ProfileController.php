@@ -12,6 +12,6 @@ class ProfileController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('default/profile.html.twig');
+        return $this->render('frontend/profile/profile.html.twig');
     }
 }

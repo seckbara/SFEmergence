@@ -8,6 +8,9 @@ use EmergenceBundle\Form\AdherentType;
 use EmergenceBundle\Entity\Adherent;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+use EmergenceBundle\Form\AbonnementType;
+use EmergenceBundle\Entity\Abonnement;
+
 
 
 class AdherentController extends Controller
@@ -24,14 +27,14 @@ class AdherentController extends Controller
             'attr' => ['class' => 'btn-block btn-success btn-sm pull-right'],
         ]);
 
-        return $this->render('default/frontend/adherent/adherent.html.twig', array(
+        return $this->render('frontend/adherent/adherent.html.twig', array(
             'form' => $form->createView(),
         ));
     }
 
 
     /**
-     * @Route("/list", name="create_adherent")
+     * @Route("/abonnement", name="create_adherent")
      */
     public function createAction(Request $request)
     {
@@ -42,8 +45,22 @@ class AdherentController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($adherent);
             $em->flush();
-            dump($adherent->getId());
-            return $this->render('default/frontend/adherent/list.html.twig');
+
+            $this_adherent = $em->getRepository(Adherent::class)->find($adherent->getId());
+
+            $adherent = new Abonnement();
+            $form_aboonement = $this->createForm(AbonnementType::class, $adherent);
+            $form_aboonement->add('submit', SubmitType::class, [
+                    'label' => 'Ajouter',
+                    'attr' => ['class' => 'btn-block btn-success btn-sm pull-right'],
+            ]);
+
+            return $this->render('frontend/abonnement/abonnement.html.twig',
+                array(
+                    'adherent' => $this_adherent,
+                    'form' => $form_aboonement->createView(),
+                )
+            );
         }
 
 
