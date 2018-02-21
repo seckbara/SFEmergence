@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65136aa8-e52b-4d4c-9f52-18025b8b3ef8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/abonnement/abonnement.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EmergenceBundle/Controller/AbonnementController.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/default/profile.html.twig" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/adherent/adherent.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/adherent/adherent.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/adherent/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/adherent/list.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/include/footer.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/include/footer.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/include/header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/include/header.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/include/nav.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/include/nav.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/macro/form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/macro/form.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/default/frontend/profile/profile.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/profile/profile.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SFEmergence.iml" afterPath="$PROJECT_DIR$/.idea/SFEmergence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/bdd0ee37-21c3-4763-9de1-c3b320d2fd8f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/bdd0ee37-21c3-4763-9de1-c3b320d2fd8f.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" afterPath="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EmergenceBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/EmergenceBundle/Controller/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EmergenceBundle/Form/AdherentType.php" afterPath="$PROJECT_DIR$/src/EmergenceBundle/Form/AdherentType.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdherentController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdherentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="48" />
+            <state relative-caret-position="390">
+              <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
               <folding>
                 <element signature="e#46#103#0#PHP" expanded="true" />
               </folding>
@@ -78,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="abonnement.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="abonnement.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/abonnement/abonnement.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -174,8 +157,8 @@
         <option value="$PROJECT_DIR$/src/EmergenceBundle/Form/AbonnementType.php" />
         <option value="$PROJECT_DIR$/src/EmergenceBundle/Controller/AbonnementController.php" />
         <option value="$PROJECT_DIR$/src/EmergenceBundle/Entity/Abonnement.php" />
-        <option value="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/abonnement/abonnement.html.twig" />
+        <option value="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" />
       </list>
     </option>
   </component>
@@ -375,12 +358,12 @@
       <workItem from="1519153454233" duration="3540000" />
       <workItem from="1519167921359" duration="1311000" />
       <workItem from="1519212865750" duration="1479000" />
-      <workItem from="1519240670029" duration="4293000" />
+      <workItem from="1519240670029" duration="4529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32290000" />
+    <option name="totallyTimeSpent" value="32526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,7 +385,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42749244" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10422961" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -696,16 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="48" />
-          <folding>
-            <element signature="e#46#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AbonnementController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -721,6 +694,16 @@
         <state relative-caret-position="135">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+          <folding>
+            <element signature="e#46#103#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -62,6 +62,9 @@ class AdherentController extends Controller
                 )
             );
         }
+        else {
+            return $this->render('frontend/profile/profile.html.twig');
+        }
 
 
     }
