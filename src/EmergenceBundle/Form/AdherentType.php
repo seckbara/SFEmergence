@@ -2,10 +2,16 @@
 
 namespace EmergenceBundle\Form;
 
+use Doctrine\DBAL\Types\DateType;
+use EmergenceBundle\Repository\QuartierRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use EmergenceBundle\Entity\Quartier;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+
 
 
 
@@ -33,7 +39,14 @@ class AdherentType extends AbstractType
                 )
             ))
             ->add('situation')
-            ->add('quartier')
+            ->add('quartier', ChoiceType::class, array(
+                'choices' => array(
+                    'Le Havre' => "1",
+                    'Rouen' => "2",
+                    'Caucrioville' => "3",
+                    'Bleville' => "4"
+                )
+            ))
             ->add('numeroSecu')
             ->add('telephoneFixe')
             ->add('cheminsCertificat')
