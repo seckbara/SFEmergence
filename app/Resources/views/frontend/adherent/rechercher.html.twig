@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block titlecontent %}Rechercher un adherent{% endblock %}
+
+{% block titlepage %}
+    <li><a href="{{ path('homepage') }}"><i class="fa fa-dashboard"></i> Accueil</a></li>
+    <li><a href="{{ path('adherent') }}" class="active">Rechercher</a></li>
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+
+{% block body %}
+
+        <div class="row">
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id adherents</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date de naissance</th>
+                        <th>Ville</th>
+                        <th>Sexe</th>
+                        <th>Téléphone</th>
+                        <th>Adresse</th>
+                        <th>Code postal</th>
+                        <th>Email</th>
+                        <th>Certficat</th>
+                        <th>Situation</th>
+                        <th>Quartier</th>
+                        <th>Numero secu</th>
+                        <th>Téléphone fixe</th>
+                        <th>Commentaire</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%   for adherent in adherents %}
+                        <tr>
+                            <td>{{ adherent.id }}</td>
+                            <td>{{ adherent.nom }}</td>
+                            <td>{{ adherent.prenom }}</td>
+                            <td>{{ adherent.dateNaissance }}</td>
+                            <td>{{ adherent.id }}</td>
+                            <td>{{ adherent.sexe }}</td>
+                            <td>{{ adherent.telephone }}</td>
+                            <td>{{ adherent.adresse }}</td>
+                            <td>{{ adherent.codePostal }}</td>
+                            <td>{{ adherent.email }}</td>
+                            <td>{{ adherent.certificat }}</td>
+                            <td>{{ adherent.certificat }}</td>
+                            <td>{{ adherent.certificat }}</td>
+                            <td>{{ adherent.numeroSecu }}</td>
+                            <td>{{ adherent.telephoneFixe }}</td>
+                            <td>{{ adherent.commentaire }}</td>
+                            <td style='text-align:center;'>
+                                <button type="button" class="btn btn-info" data-title="detail"  data-toggle="modal" data-target="#detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modifier" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-danger confirm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <a href="" class="btn btn-default" target="_blank"><i class="fa fa-file"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Id adherents</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date de naissance</th>
+                        <th>Ville</th>
+                        <th>Sexe</th>
+                        <th>Téléphone</th>
+                        <th>Adresse</th>
+                        <th>Code postal</th>
+                        <th>Email</th>
+                        <th>Certficat</th>
+                        <th>Situation</th>
+                        <th>Quartier</th>
+                        <th>Numero secu</th>
+                        <th>Téléphone fixe</th>
+                        <th>Commentaire</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+{% endblock %}
+
+    {% block javascripts %}
+        <script>
+
+            $(function () {
+                $('#example1').DataTable({
+                    'paging'      : true,
+                    'lengthChange': true,
+                    'searching'   : true,
+                    'ordering'    : true,
+                    'info'        : true,
+                    'autoWidth'   : true,
+                    "lengthMenu": [[15, 20, 28, -1], [15, 20, 28, "Afficher tout"]],
+                    language: {
+                        processing:     "Traitement en cours...",
+                        search:         "Rechercher&nbsp;:",
+                        lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+                        info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                        infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                        infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                        infoPostFix:    "",
+                        loadingRecords: "Chargement en cours...",
+                        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                        emptyTable:     "Aucune donnée disponible dans le tableau",
+                        paginate: {
+                            first:      "Premier",
+                            previous:   "Pr&eacute;c&eacute;dent",
+                            next:       "Suivant",
+                            last:       "Dernier"
+                        },
+                        aria: {
+                            sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                            sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                        }
+                    }
+                })
+            });
+
+        </script>
+    {% endblock %}

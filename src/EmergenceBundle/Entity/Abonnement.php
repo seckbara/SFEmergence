@@ -29,9 +29,8 @@ class Abonnement
     private $certificat;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="activite", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Activite", inversedBy="aboonement")
+     * @ORM\JoinColumn(name="activite_id", referencedColumnName="id")
      */
     private $activite;
 
@@ -43,9 +42,8 @@ class Abonnement
     private $dateCertficat;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="type_abonnement", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TypeAbonnement", inversedBy="abonnement")
+     * @ORM\JoinColumn(name="type_ab_id", referencedColumnName="id")
      */
     private $typeAbonnement;
 
@@ -64,9 +62,8 @@ class Abonnement
     private $duree;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="type_paiement", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TypePaiement", inversedBy="abonnement")
+     * @ORM\JoinColumn(name="type_paie_id", referencedColumnName="id")
      */
     private $typePaiement;
 
@@ -82,6 +79,14 @@ class Abonnement
      * @ORM\JoinColumn(name="adherent_id", referencedColumnName="id")
      */
     private $adherent;
+
+    /**
+     * Abonnement constructor.
+     */
+    public function __construct()
+    {
+        //$this->dateAbonnement = new \DateTime();
+    }
 
 
     /**
