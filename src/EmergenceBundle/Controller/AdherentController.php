@@ -61,7 +61,6 @@ class AdherentController extends Controller
                 array(
                     'adherent' => $this_adherent,
                     'form' => $form_aboonement->createView(),
-                    //'date_abonnement' => $abonnement->getDateAbonnement()
                 )
             );
         }
@@ -73,7 +72,7 @@ class AdherentController extends Controller
 
 
     /**
-     * @Route("/search", name="rechercher")
+     * @Route("/search_adherent", name="search_adherent")
      */
     public function searchAction()
     {

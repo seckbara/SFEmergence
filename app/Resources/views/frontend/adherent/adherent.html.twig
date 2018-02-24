@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="form-group">
-                {{ form_row(form.ville, {'attr': {'class': 'form-control', 'placeholder': "Saisir la ville"}}) }}
+                {{ form_row(form.ville, {'attr': {'class': 'select2 form-control', 'placeholder': "Saisir la ville"}}) }}
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="form-group">
-                {{ form_row(form.situation, {'attr': {'class': 'form-control', 'placeholder': "Saisir la situation"}}) }}
+                {{ form_row(form.situation, {'attr': {'class': 'form-control select2', 'placeholder': "Saisir la situation"}}) }}
             </div>
         </div>
         <div class="col-md-6">
@@ -133,19 +133,16 @@
 
 {% endblock %}
 
-    {% block javascripts %}
+{% block javascripts %}
         <script>
 
-            $(function () {
+            //$('.select2').select2();
 
-                $('.datepicker').datepicker({
-                    changeMonth: true,
-                    numberOfMonths: 1,
-                    dateFormat: 'yy-mm-dd'
-                });
-
-//                $('.select2').select2()
+            $('.datepicker').datepicker({
+                changeMonth: true,
+                numberOfMonths: 1,
+                dateFormat: 'yy-mm-dd'
             });
 
         </script>
-    {% endblock %}
+{% endblock %}

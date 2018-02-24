@@ -20,8 +20,7 @@ class AbonnementType extends AbstractType
     {
         $builder
             ->add('certificat', ChoiceType::class, array(
-                'choices' => array('m' => 'Oui', 'f' => 'Non'),
-                'choices_as_values' => true,'multiple'=>false,'expanded'=>true,
+                'choices' => array('Oui' => 'Oui', 'Non' => 'Non'),
             ))
             ->add('activite', EntityType::class, array(
                 'class' => Activite::class,
@@ -37,7 +36,9 @@ class AbonnementType extends AbstractType
                 'placeholder' => 'Veuillez selectionner le type d\'abonnement',
             ))
             ->add('dateAbonnement')
-            ->add('duree')
+            ->add('duree', ChoiceType::class, array(
+                'choices' => array('3 mois' => '3', '6 mois' => '6', '12 mois' => '12'),
+            ))
             ->add('typePaiement', EntityType::class, array(
                 'class' => TypePaiement::class,
                 'choice_label' => 'nom',
@@ -45,7 +46,9 @@ class AbonnementType extends AbstractType
                 'placeholder' => 'Veuillez selectionner le type de paiement',
             ))
             ->add('montant');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
