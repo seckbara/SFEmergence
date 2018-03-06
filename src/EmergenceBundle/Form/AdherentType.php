@@ -2,15 +2,17 @@
 
 namespace EmergenceBundle\Form;
 
-use Doctrine\DBAL\Types\DateType;
-use EmergenceBundle\Repository\QuartierRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use EmergenceBundle\Entity\Situation;
+use EmergenceBundle\Entity\Ville;
 use EmergenceBundle\Entity\Quartier;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 
 
@@ -26,36 +28,46 @@ class AdherentType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('dateNaissance')
-            ->add('ville')
+            ->add('ville', EntityType::class, array(
+                'class' => Ville::class,
+                'choice_label' => 'nom',
+                'multiple' => false,
+                'placeholder' => 'Veuillez selectionner une ville',
+            ))
             ->add('sexe', ChoiceType::class, array(
                 'choices' => array(
-                   "Homme" => "H",
-                    "Femme" => "F"
+                    'Homme' => 'H',
+                    "Femme" => 'F'
                 )
             ))
             ->add('telephone')
             ->add('adresse')
             ->add('codePostal')
-            ->add('email')
+            ->add('email', EmailType::class)
             ->add('certificat', ChoiceType::class, array(
                 'choices' => array(
                     'Oui' => "Oui",
                     'Non' => "Non"
                 )
             ))
-            ->add('situation')
-            ->add('quartier', ChoiceType::class, array(
-                'choices' => array(
-                    'Le Havre' => "1",
-                    'Rouen' => "2",
-                    'Caucrioville' => "3",
-                    'Bleville' => "4"
-                )
+            ->add('situation', EntityType::class, array(
+                'class' => Situation::class,
+                'choice_label' => 'nom',
+                'multiple' => false,
+                'placeholder' => 'Veuillez selectionner une situation',
+            ))
+            ->add('quartier', EntityType::class, array(
+                'class' => Quartier::class,
+                'choice_label' => 'nom',
+                'multiple' => false,
+                'placeholder' => 'Veuillez selectionner un quartier',
             ))
             ->add('numeroSecu')
             ->add('telephoneFixe')
             ->add('cheminsCertificat')
-            ->add('commentaire');
+            ->add('commentaire',TextareaType::class,array(
+                'attr' => array('cols' => '5', 'rows' => '5'),
+            ));
     }
     /**
      * {@inheritdoc}

@@ -2,6 +2,7 @@
 
 namespace EmergenceBundle\Controller;
 
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use EmergenceBundle\Form\AdherentType;
@@ -10,7 +11,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use EmergenceBundle\Form\AbonnementType;
 use EmergenceBundle\Entity\Abonnement;
-
 
 
 class AdherentController extends Controller
@@ -48,12 +48,14 @@ class AdherentController extends Controller
 
             $this_adherent = $em->getRepository(Adherent::class)->find($adherent->getId());
 
-            $adherent = new Abonnement();
-            $form_aboonement = $this->createForm(AbonnementType::class, $adherent);
+            $abonnement = new Abonnement();
+            $form_aboonement = $this->createForm(AbonnementType::class, $abonnement);
             $form_aboonement->add('submit', SubmitType::class, [
                     'label' => 'Ajouter',
                     'attr' => ['class' => 'btn-block btn-success btn-sm pull-right'],
             ]);
+
+            $this->get('session')->getFlashBag()->add('success', 'Adherent '.$this_adherent->getPrenom().' '.$this_adherent->getNom().'   à été ajouter avec succées.');
 
             return $this->render('frontend/abonnement/abonnement.html.twig',
                 array(
@@ -66,6 +68,19 @@ class AdherentController extends Controller
             return $this->render('frontend/profile/profile.html.twig');
         }
 
-
     }
+
+
+    /**
+     * @Route("/search_adherent", name="search_adherent")
+     */
+    public function searchAction()
+    {
+        $repository = $this->getDoctrine()->getRepository(Adherent::class);
+        $adherents = $repository->findAll();
+        return $this->render('frontend/adherent/rechercher.html.twig', array(
+            'adherents' => $adherents,
+        ));
+    }
+
 }

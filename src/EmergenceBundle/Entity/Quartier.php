@@ -62,5 +62,6 @@ class Quartier
     {
         return $this->nom;
     }
+
 }
 

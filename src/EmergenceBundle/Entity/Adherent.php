@@ -43,9 +43,8 @@ class Adherent
     private $dateNaissance;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Ville", inversedBy="adherent")
+     * @ORM\JoinColumn(name="ville_id", referencedColumnName="id")
      */
     private $ville;
 
@@ -92,16 +91,14 @@ class Adherent
     private $certificat;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="situation", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Situation", inversedBy="adherent")
+     * @ORM\JoinColumn(name="situation_id", referencedColumnName="id")
      */
     private $situation;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="quartier", type="integer")
+     * @ORM\ManyToOne(targetEntity="Quartier", inversedBy="adherent")
+     * @ORM\JoinColumn(name="quartier_id", referencedColumnName="id")
      */
     private $quartier;
 

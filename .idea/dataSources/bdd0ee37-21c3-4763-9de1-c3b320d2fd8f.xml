@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="sfemergence@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
     <root id="1"/>
     <schema id="2" parent="1" name="sfemergence">
       <Current>1</Current>
@@ -10,194 +10,27 @@
     <schema id="4" parent="1" name="emergence"/>
     <schema id="5" parent="1" name="enrcert"/>
     <schema id="6" parent="1" name="enrcertpro"/>
-    <schema id="7" parent="1" name="information_schema"/>
-    <schema id="8" parent="1" name="mysql"/>
-    <schema id="9" parent="1" name="operations_revisees"/>
-    <schema id="10" parent="1" name="pass_renov"/>
-    <schema id="11" parent="1" name="performance_schema"/>
-    <schema id="12" parent="1" name="phpmyadmin"/>
-    <schema id="13" parent="1" name="qmac"/>
-    <schema id="14" parent="1" name="qmac-mb"/>
-    <schema id="15" parent="1" name="qmac2"/>
-    <schema id="16" parent="1" name="qmac_pee"/>
-    <schema id="17" parent="1" name="refonte-qmac"/>
-    <schema id="18" parent="1" name="refonte_pee"/>
-    <schema id="19" parent="1" name="solirenov"/>
-    <schema id="20" parent="1" name="sys"/>
-    <schema id="21" parent="1" name="test"/>
-    <table id="22" parent="2" name="abonnement"/>
-    <table id="23" parent="2" name="adherent"/>
-    <table id="24" parent="2" name="quartier"/>
-    <column id="25" parent="22" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="26" parent="22" name="certificat">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="27" parent="22" name="activite">
-      <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="28" parent="22" name="date_certficat">
-      <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="29" parent="22" name="type_abonnement">
-      <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="30" parent="22" name="date_abonnement">
-      <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="22" name="duree">
-      <Position>7</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="22" name="type_paiement">
-      <Position>8</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="33" parent="22" name="montant">
-      <Position>9</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="34" parent="22" name="adherent_id">
-      <Position>10</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="35" parent="22" name="IDX_351268BB25F06C53">
-      <ColNames>adherent_id</ColNames>
-    </index>
-    <key id="36" parent="22" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="37" parent="22" name="FK_351268BB25F06C53">
-      <ColNames>adherent_id</ColNames>
-      <RefSchemaName>sfemergence</RefSchemaName>
-      <RefTableName>adherent</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="38" parent="23" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="39" parent="23" name="nom">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="40" parent="23" name="prenom">
-      <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="41" parent="23" name="date_naissance">
-      <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="42" parent="23" name="ville">
-      <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="43" parent="23" name="sexe">
-      <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="44" parent="23" name="telephone">
-      <Position>7</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="45" parent="23" name="adresse">
-      <Position>8</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="46" parent="23" name="code_postal">
-      <Position>9</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="47" parent="23" name="email">
-      <Position>10</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="48" parent="23" name="certificat">
-      <Position>11</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="49" parent="23" name="situation">
-      <Position>12</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="50" parent="23" name="quartier">
-      <Position>13</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="51" parent="23" name="numero_secu">
-      <Position>14</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="52" parent="23" name="telephone_fixe">
-      <Position>15</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="53" parent="23" name="chemins_certificat">
-      <Position>16</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="54" parent="23" name="commentaire">
-      <Position>17</Position>
-      <DataType>longtext|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="55" parent="23" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="56" parent="24" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="57" parent="24" name="nom">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="58" parent="24" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
+    <schema id="7" parent="1" name="enrcert_ancien"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="migrate_enrcert"/>
+    <schema id="10" parent="1" name="migrate_qmac"/>
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="operations_revisees"/>
+    <schema id="13" parent="1" name="pass_renov"/>
+    <schema id="14" parent="1" name="peedb_v2"/>
+    <schema id="15" parent="1" name="performance_schema"/>
+    <schema id="16" parent="1" name="qmac"/>
+    <schema id="17" parent="1" name="qmac2"/>
+    <schema id="18" parent="1" name="qmac_ancien"/>
+    <schema id="19" parent="1" name="qmac_pee"/>
+    <schema id="20" parent="1" name="qmac_test"/>
+    <schema id="21" parent="1" name="refonte"/>
+    <schema id="22" parent="1" name="refonte-qmac"/>
+    <schema id="23" parent="1" name="refonte_pee"/>
+    <schema id="24" parent="1" name="site_pro"/>
+    <schema id="25" parent="1" name="solirenov"/>
+    <schema id="26" parent="1" name="sys"/>
+    <schema id="27" parent="1" name="teste"/>
+    <schema id="28" parent="1" name="zoulou"/>
   </database-model>
 </dataSource>
