@@ -27,7 +27,12 @@ class AdherentType extends AbstractType
             ->add('prenom')
             ->add('dateNaissance')
             ->add('ville')
-            ->add('sexe')
+            ->add('sexe', ChoiceType::class, array(
+                'choices' => array(
+                   "Homme" => "H",
+                    "Femme" => "F"
+                )
+            ))
             ->add('telephone')
             ->add('adresse')
             ->add('codePostal')
