@@ -20,8 +20,7 @@
                         <th>Id adherents</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Date de naissance</th>
-                        <th>Ville</th>
+                        <th>Date Naissance</th>
                         <th>Sexe</th>
                         <th>Téléphone</th>
                         <th>Adresse</th>
@@ -31,19 +30,16 @@
                         <th>Situation</th>
                         <th>Quartier</th>
                         <th>Numero secu</th>
-                        <th>Téléphone fixe</th>
-                        <th>Commentaire</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {%   for adherent in adherents %}
+                    {% for adherent in adherents %}
                         <tr>
                             <td>{{ adherent.id }}</td>
                             <td>{{ adherent.nom }}</td>
                             <td>{{ adherent.prenom }}</td>
                             <td>{{ adherent.dateNaissance }}</td>
-                            <td>{{ adherent.id }}</td>
                             <td>{{ adherent.sexe }}</td>
                             <td>{{ adherent.telephone }}</td>
                             <td>{{ adherent.adresse }}</td>
@@ -52,11 +48,9 @@
                             <td>{{ adherent.certificat }}</td>
                             <td>{{ adherent.certificat }}</td>
                             <td>{{ adherent.certificat }}</td>
-                            <td>{{ adherent.numeroSecu }}</td>
                             <td>{{ adherent.telephoneFixe }}</td>
-                            <td>{{ adherent.commentaire }}</td>
                             <td style='text-align:center;'>
-                                <button type="button" class="btn btn-info" data-title="detail"  data-toggle="modal" data-target="#detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-info modal" data-toggle="modal" data-target="#detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modifier" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-danger confirm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 <a href="" class="btn btn-default" target="_blank"><i class="fa fa-file"></i></a>
@@ -69,8 +63,7 @@
                         <th>Id adherents</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Date de naissance</th>
-                        <th>Ville</th>
+                        <th>Date Naissance</th>
                         <th>Sexe</th>
                         <th>Téléphone</th>
                         <th>Adresse</th>
@@ -80,8 +73,6 @@
                         <th>Situation</th>
                         <th>Quartier</th>
                         <th>Numero secu</th>
-                        <th>Téléphone fixe</th>
-                        <th>Commentaire</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -93,6 +84,7 @@
 {% endblock %}
 
     {% block javascripts %}
+        <script src="{{ asset('asset/bower_components/jquery/dist/jquery.min.js') }}"></script>
         <script>
 
             $(function () {
@@ -127,6 +119,34 @@
                         }
                     }
                 })
+            });
+
+            $('#example1').on("click", ".confirm", function(e){
+                e.preventDefault();
+                e.preventDefault();
+                $link = $(this);
+                console.log($link);
+                var rowData = $('#example1').DataTable().row($link.closest('tr')).data();
+                var id = rowData[0];
+                $.confirm({
+                    text: "Etes-vous sûr de vouloir suprrimer cet adherent. Sa supression supprimera toute ses abonnements",
+                    confirmButton: "Supprimer",
+                    cancelButton: "Annuler",
+                    confirm: function(data) {
+                        console.log(id);
+
+//                        $.post("scripts/ajout_adherent.php", { id_adh: id}, function (data) {
+//                            if(data['result'] === 'success') {
+//                                $("#success").html("La supression s'est effectuer avec succée").show();
+//                                setTimeout(function() { window.location.reload() },5000);
+//                            }
+//                            else{
+//                                $("#error").html("Erreur lors de la supression").show();
+//                                setTimeout(function() { window.location.reload() },5000);
+//                            }
+//                        }, 'json');
+                    }
+                });
             });
 
         </script>

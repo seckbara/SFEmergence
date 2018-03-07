@@ -103,9 +103,9 @@ class Adherent
     private $quartier;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="numero_secu", type="integer")
+     * @ORM\Column(name="numero_secu", type="string", length=255)
      */
     private $numeroSecu;
 
