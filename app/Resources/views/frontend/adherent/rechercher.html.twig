@@ -7,7 +7,9 @@
     <li><a href="{{ path('adherent') }}" class="active">Rechercher</a></li>
 {% endblock %}
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('asset/bower_components/jquery-confirm/css/jquery-confirm.css') }}" />
+{% endblock %}
 
 
 {% block body %}
@@ -50,7 +52,7 @@
                             <td>{{ adherent.certificat }}</td>
                             <td>{{ adherent.telephoneFixe }}</td>
                             <td style='text-align:center;'>
-                                <button type="button" class="btn btn-info modal" data-toggle="modal" data-target="#detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-info detail" data-toggle="modal" data-target="#detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modifier" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-danger confirm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 <a href="" class="btn btn-default" target="_blank"><i class="fa fa-file"></i></a>
@@ -84,9 +86,9 @@
 {% endblock %}
 
     {% block javascripts %}
-        <script src="{{ asset('asset/bower_components/jquery/dist/jquery.min.js') }}"></script>
-        <script>
+        <script src="{{ asset('asset/bower_components/jquery-confirm/js/jquery-confirm.js') }}"></script>
 
+        <script>
             $(function () {
                 $('#example1').DataTable({
                     'paging'      : true,
@@ -123,28 +125,33 @@
 
             $('#example1').on("click", ".confirm", function(e){
                 e.preventDefault();
-                e.preventDefault();
                 $link = $(this);
                 console.log($link);
                 var rowData = $('#example1').DataTable().row($link.closest('tr')).data();
                 var id = rowData[0];
-                $.confirm({
-                    text: "Etes-vous sûr de vouloir suprrimer cet adherent. Sa supression supprimera toute ses abonnements",
-                    confirmButton: "Supprimer",
-                    cancelButton: "Annuler",
-                    confirm: function(data) {
-                        console.log(id);
 
-//                        $.post("scripts/ajout_adherent.php", { id_adh: id}, function (data) {
-//                            if(data['result'] === 'success') {
-//                                $("#success").html("La supression s'est effectuer avec succée").show();
-//                                setTimeout(function() { window.location.reload() },5000);
-//                            }
-//                            else{
-//                                $("#error").html("Erreur lors de la supression").show();
-//                                setTimeout(function() { window.location.reload() },5000);
-//                            }
-//                        }, 'json');
+                $.confirm({
+                    title: 'Etes-vous sûr de vouloir confirmer!',
+                    confirmButton: 'Okay',
+                    cancelButton: 'Cancel',
+                    buttons: {
+                        confirm: function () {
+                            var id = rowData[0];
+                            alert(id);
+                            $.post("{{ path('delete_adherent', {'id': 1}) }}", function (data) {
+//                                if(data['result'] === 'success') {
+//                                    $("#success").html("La supression s'est effectuer avec succée").show();
+//                                    setTimeout(function() { window.location.reload() },5000);
+//                                }
+//                                else{
+//                                    $("#error").html("Erreur lors de la supression").show();
+//                                    setTimeout(function() { window.location.reload() },5000);
+//                                }
+                            }, 'json');
+                        },
+                        cancel: function () {
+                            // $.alert('Canceled!');
+                        }
                     }
                 });
             });

@@ -83,4 +83,20 @@ class AdherentController extends Controller
         ));
     }
 
+    /**
+     * @Route("/delete/{id}", name="delete_adherent")
+     */
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(Adherent::class);
+        $adherent = $repository->find($id);
+        if($adherent != null){
+            $em->remove($adherent);
+            $em->flush();
+        }
+        dump($adherent);
+        exit();
+    }
+
 }
