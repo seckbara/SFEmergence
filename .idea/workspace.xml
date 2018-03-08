@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65136aa8-e52b-4d4c-9f52-18025b8b3ef8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/frontend/adherent/rechercher.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/adherent/rechercher.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" afterPath="$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,8 +60,8 @@
       <file leaf-file-name="AdherentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="98" column="15" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="15" />
+            <state relative-caret-position="159">
+              <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -387,12 +386,12 @@
       <workItem from="1519465026034" duration="18429000" />
       <workItem from="1519497325179" duration="2509000" />
       <workItem from="1520342861223" duration="3942000" />
-      <workItem from="1520415307198" duration="3735000" />
+      <workItem from="1520415307198" duration="4137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65866000" />
+    <option name="totallyTimeSpent" value="66268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -743,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EmergenceBundle/Controller/AdherentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="98" column="15" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="15" />
+        <state relative-caret-position="159">
+          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
           <folding />
         </state>
       </provider>
