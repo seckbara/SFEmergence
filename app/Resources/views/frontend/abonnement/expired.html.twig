@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block titlecontent %}Liste des abonnements expirés{% endblock %}
+
+{% block titlepage %}
+    <li><a href="{{ path('homepage') }}"><i class="fa fa-dashboard"></i> Accueil</a></li>
+    <li><a href="{{ path('expired_abonnement') }}" class="active">Fin abonnement</a></li>
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="box-body">
+            <div class="modal fade" id="modal-default">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Veuillez patientez</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p align="center"><img  src="{{ asset('asset/img/loadind.gif')}}" align="center"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="{{ path('search_expired', { 'id': 12 }) }}" method="post" id="fin_abonn">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form_row(form.mois, {'attr': {'class': 'form-control select2'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            {{ form_row(form.submit) }}
+                        </div>
+                    </div>
+                </div><br>
+            </form>
+
+            <table id="example1" class="table table-bordered table-striped" hide><br>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            var $table = $('#example1');
+            var id = $('.select2').val();
+            var $searchForm = $("#fin_abonn");
+            $table.dataTable({
+                'paging'      : true,
+                'lengthChange': true,
+                'searching'   : true,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : true,
+                "sSearch":         "Rechercher&nbsp;:",
+                "lengthMenu": [[7, 14, 28, -1], [12, 14, 28, "Afficher tout"]],
+                language: {
+                    processing:     "Traitement en cours...",
+                    search:         "Rechercher&nbsp;:",
+                    lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+                    info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    infoPostFix:    "",
+                    loadingRecords: "Chargement en cours...",
+                    zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    emptyTable:     "Aucune donnée disponible dans le tableau",
+                    paginate: {
+                        first:      "Premier",
+                        previous:   "Pr&eacute;c&eacute;dent",
+                        next:       "Suivant",
+                        last:       "Dernier"
+                    },
+                    aria: {
+                        sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                        sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                    }
+                },
+                columns: [
+                    { title: "Id Abonnement", data: 'id' },
+                    { title: "Id adherent", data: 'date_certificat' },
+                    { title: "Nom adherent", data: 'type_abonnement' },
+                    { title: "Prenom adherent", data: 'date_abonnement' },
+                    { title: "Date de certifcat", data: 'duree_abonnement'},
+                    { title: "Date d'inscription", data: 'montant'},
+                    { title: "Montant", data: 'id_adherent'},
+                    { title: "Durée", data: 'id_activite'},
+                    { title: "Actions", data:'OrgBp', className: 'datatable-column-actions'}
+                ],
+                columnDefs: [
+                    {
+                        render: function (data, type, row) {
+                            return '<a href="#" class="link-modal">' + data + '</a>';
+                        },
+                        targets: 0
+                    },
+                    {
+                        render: function (data, type, row) {
+                            return '<a href="" class="link-modal btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
+                        },
+                        targets: 9
+                    }
+                ]
+            }).removeClass('hide');
+
+            $searchForm.submit(function(event){
+                event.preventDefault();
+                $('#modal-default').modal('show');
+                $.post("{{path('search_expired', { 'id': 1 })}}", function(json) {
+                    console.log('ok');
+                    if(json){
+                        $table.DataTable().clear().rows.add(json).draw();
+                        $('#modal-default').modal('hide');
+                    }
+                }, "json");
+            });
+        });
+
+
+    </script>
+{% endblock %}
